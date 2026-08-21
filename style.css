@@ -5,3 +5,42 @@ Author: Lara Kroeker Interactive
 Version: 0.1.0
 Text Domain: ss-theme
 */
+
+:root {
+	/* Layout mechanics — not brand facts, standing conventions */
+	--layout-max: 1200px;
+	--prose-max: 640px;
+	--radius-sm: 6px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+	--radius-pill: 999px;
+	--shadow-xs: 0 1px 3px rgba(40, 40, 40, 0.12);
+	--shadow-md: 0 8px 24px rgba(40, 40, 40, 0.16);
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semibold: 600;
+	--fw-bold: 700;
+	--font-mono: "SF Mono", Consolas, monospace;
+	--dur-fast: 150ms;
+	--ease-standard: ease-out;
+	--bg-raised: var(--ss-white);
+	--border-strong: var(--ss-grey-4);
+
+	/* type-*-size aliases onto the real roles defined in colors_and_type.css */
+	--type-h1-size: var(--type-display);
+	--type-h2-size: var(--type-section);
+	--type-h3-size: var(--type-subsection);
+	--type-leadb-size: var(--type-card-title);
+	--type-small-size: 0.875rem;
+	--type-micro-size: 0.75rem;
+}
+
+body { font-family: var(--font-body); color: var(--fg); background: var(--bg); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+.eyebrow { font-size: var(--type-eyebrow); font-weight: var(--fw-medium); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-muted); }
+.type-h1 { font-size: var(--type-h1-size); font-weight: var(--fw-semibold); }
+.type-h3 { font-size: var(--type-h3-size); font-weight: var(--fw-semibold); }
+.type-lead { font-size: 1.25rem; line-height: 1.5; }
+.type-leadb { font-size: var(--type-leadb-size); font-weight: var(--fw-semibold); }
+.type-small { font-size: var(--type-small-size); }
+.type-micro { font-size: var(--type-micro-size); }
