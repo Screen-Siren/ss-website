@@ -1,8 +1,88 @@
 /*
 Canonical design tokens for Screen Siren.
 
-Empty on purpose — no brand source material has been gathered yet (see "Open items" in
-../../SS-folder-structure-and-rules.md). Do not invent colors, fonts, or spacing here.
-Fill this in during the Design Guidelines pass, following ../../../WORKSPACE-design-guidelines-playbook.md
-("The token architecture underneath the page" — primitive -> role -> component).
+Source: real computed values pulled from the live staging site (norebro-child + WPBakery),
+Aug 21, 2026, via getComputedStyle() in a real rendered browser — not guessed from a
+screenshot, not invented. Every primitive below is marked REAL (captured) or DERIVED
+(computed from a real anchor, per the workspace's design-guidelines-playbook rules) or
+RESERVED (a placeholder slot, not yet referenced anywhere, kept honest rather than dropped).
+
+Three layers: primitive -> role -> component. Product code only ever references a role.
+If a role exists for what you're writing, use it; reaching for a primitive means a role
+is missing.
 */
+
+:root {
+	/* ---- Primitives: Surface ---- */
+	--ss-white: #FFFFFF;            /* REAL — page background, 103 occurrences */
+	--ss-neutral: #DADADA;          /* REAL — alternating section background, 38 occurrences */
+	--ss-dark: #282828;             /* REAL — footer background / dark sections, 68 occurrences */
+
+	/* ---- Primitives: Primary (the brand accent) ---- */
+	--ss-olive: #B2BB1E;            /* REAL — category badges (FEATURE FILM, etc.) */
+	--ss-olive-pressed: #A9B31C;    /* REAL — captured hover/pressed variant in actual use */
+
+	/* ---- Primitives: CTA ---- */
+	--ss-teal: #64BDB8;              /* REAL — IMDB / CRAVE / "stream, rent or buy" action labels */
+	--ss-teal-pressed: #3F9590;      /* DERIVED — 15% darker than --ss-teal, no real hover state found */
+	--ss-teal-tint: #E8F5F4;         /* DERIVED — 15% teal into white */
+
+	/* ---- Primitives: Greys (picked from Primary's hue, ~63deg, at 6% saturation) ---- */
+	--ss-grey-1: #282924;            /* DERIVED — 15% lightness. RESERVED, not yet referenced */
+	--ss-grey-2: #494949;            /* REAL — body copy colour */
+	--ss-grey-3: #888888;            /* REAL — link colour */
+	--ss-grey-4: #9A9A9A;            /* REAL — footer text colour */
+	--ss-grey-5: #DADADA;            /* REAL — same value as --ss-neutral; the ramp's lightest
+	                                     step and the Neutral surface are honestly the same colour */
+
+	/* ---- Primitives: Semantic (RESERVED — no real error/success/info state found yet) ---- */
+	--ss-error: #C0392B;             /* RESERVED — not yet referenced anywhere */
+	--ss-success: #2E7D5B;           /* RESERVED — not yet referenced anywhere */
+	--ss-info: #64BDB8;              /* RESERVED — reuses CTA teal; no distinct info colour exists */
+
+	/* ---- Roles ---- */
+	--bg: var(--ss-white);
+	--bg-neutral: var(--ss-neutral);
+	--bg-dark: var(--ss-dark);
+	--fg: var(--ss-grey-2);
+	--fg-on-dark: var(--ss-white);
+	--fg-muted: var(--ss-grey-3);
+	--fg-muted-on-dark: var(--ss-grey-4);
+	--border: var(--ss-grey-5);
+	--accent: var(--ss-olive);
+	--accent-pressed: var(--ss-olive-pressed);
+	--cta: var(--ss-teal);
+	--cta-pressed: var(--ss-teal-pressed);
+	--cta-tint: var(--ss-teal-tint);
+	--error: var(--ss-error);
+	--success: var(--ss-success);
+	--info: var(--ss-info);
+
+	/* ---- Type: font families (REAL — Google Fonts links present on the live site) ---- */
+	--font-heading: "Poppins", sans-serif;   /* weights 300-700 loaded */
+	--font-body: "Rubik", sans-serif;
+
+	/*
+	Type scale. Only the Section role actually scales with viewport on the live site
+	(measured 28px at 480px wide, 42px at 1440px wide) — that's a real fluid anchor, so it's
+	built as a proper clamp() with both a rem and vw term (bare vw fails WCAG 1.4.4).
+	Every other heading role is a REAL fixed size on the live site today — not fluid there,
+	so not fabricated as fluid here.
+	*/
+	--type-display: 2.625rem;        /* PLACEHOLDER — no H1 exists anywhere on the live site.
+	                                     Reserved size only; revisit once a real H1 is introduced. */
+	--type-section: clamp(1.75rem, 1.3125rem + 1.4583vw, 2.625rem); /* REAL — H2, 28px -> 42px */
+	--type-subsection: 2.25rem;      /* REAL — H3, most common real value (36px); site itself
+	                                     varies 32-40px per instance, not by breakpoint */
+	--type-card-title: 1.6875rem;    /* REAL — H4, 27px, fixed */
+	--type-eyebrow: 0.65rem;         /* REAL — H5, 10.4px, fixed, uppercase */
+	--type-meta: 0.75rem;            /* REAL — H6, 12px, fixed */
+	--type-body: 1rem;               /* REAL — 16px, fixed */
+
+	/* ---- Spacing: 15-step ladder on a 4px grid (standing workspace convention — the live
+	     site's real padding/margin values are an inconsistent page-builder mix with no
+	     coherent scale to extract; this ladder is what the new theme adopts going forward) ---- */
+	--sp-2: 2px; --sp-4: 4px; --sp-8: 8px; --sp-12: 12px; --sp-16: 16px; --sp-20: 20px;
+	--sp-24: 24px; --sp-32: 32px; --sp-40: 40px; --sp-48: 48px; --sp-56: 56px; --sp-64: 64px;
+	--sp-80: 80px; --sp-96: 96px; --sp-120: 120px;
+}
