@@ -22,6 +22,11 @@ function ss_theme_enqueue_assets() {
 	if ( is_page( 'icon-library' ) ) {
 		wp_enqueue_style( 'ss-page-icon-library', get_stylesheet_directory_uri() . '/assets/page-icon-library.css', array( 'ss-style' ), '0.1.0' );
 	}
+
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'ss-front-page', get_stylesheet_directory_uri() . '/assets/front-page.css', array( 'ss-style' ), '0.1.0' );
+		wp_enqueue_script( 'ss-front-page', get_stylesheet_directory_uri() . '/assets/front-page.js', array(), '0.1.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'ss_theme_enqueue_assets' );
 
