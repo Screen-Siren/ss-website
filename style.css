@@ -58,15 +58,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 	color: var(--fg-on-dark);
 }
 .site-header__logo { display: block; line-height: 0; }
-.site-header__logo-img {
-	height: 44px;
-	width: auto;
-	/* SSP-Logo.png has a white background baked in, not a transparent one — multiply blend
-	   makes the white areas disappear into whatever's behind it (photo, video, or the plain
-	   light header on inner pages), leaving just the mark and wordmark visible. */
-	mix-blend-mode: multiply;
-}
-body:not(.home) .site-header__logo-img { mix-blend-mode: normal; }
+.site-header__logo-img { height: 44px; width: auto; }
 .site-header__nav { display: flex; gap: var(--sp-32); }
 .site-header__nav a {
 	color: var(--fg-on-dark);
@@ -102,7 +94,7 @@ body:not(.home) .site-header__nav a { color: var(--fg); }
 	align-items: flex-start;
 	gap: var(--sp-32);
 }
-.site-footer__logo-img { height: 48px; width: auto; mix-blend-mode: multiply; margin-bottom: var(--sp-16); }
+.site-footer__logo-img { height: 48px; width: auto; margin-bottom: var(--sp-16); }
 .site-footer__address { font-size: var(--type-small-size); line-height: 1.6; }
 .site-footer__address a { color: var(--fg-muted-on-dark); }
 .site-footer__nav { display: flex; flex-wrap: wrap; gap: var(--sp-24); }

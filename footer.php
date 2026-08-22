@@ -1,7 +1,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-footer__inner">
 			<div class="site-footer__brand">
-				<?php echo wp_get_attachment_image( 5659654, 'thumbnail', false, array( 'class' => 'site-footer__logo-img', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
+				<?php echo wp_get_attachment_image( 5659901, 'thumbnail', false, array( 'class' => 'site-footer__logo-img', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
 				<p class="site-footer__address">
 					2021 Columbia Street<br>
 					Vancouver, BC V5Y 3V6<br>

@@ -10,7 +10,7 @@
 
 <header id="masthead" class="site-header">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header__logo">
-		<?php echo wp_get_attachment_image( 5659654, 'thumbnail', false, array( 'class' => 'site-header__logo-img', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
+		<?php echo wp_get_attachment_image( 5659901, 'thumbnail', false, array( 'class' => 'site-header__logo-img', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
 	</a>
 	<nav class="site-header__nav" aria-label="Primary">
 		<a href="#projects">Projects</a>
