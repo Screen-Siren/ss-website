@@ -57,23 +57,16 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 	padding: var(--sp-24) var(--sp-40);
 	color: var(--fg-on-dark);
 }
-.site-header__logo {
-	display: block;
-	font-family: var(--font-heading);
-	font-size: 1.1rem;
-	font-weight: var(--fw-semibold);
-	color: var(--fg-on-dark);
-	text-decoration: none;
-	line-height: 1.2;
+.site-header__logo { display: block; line-height: 0; }
+.site-header__logo-img {
+	height: 44px;
+	width: auto;
+	/* SSP-Logo.png has a white background baked in, not a transparent one — multiply blend
+	   makes the white areas disappear into whatever's behind it (photo, video, or the plain
+	   light header on inner pages), leaving just the mark and wordmark visible. */
+	mix-blend-mode: multiply;
 }
-.site-header__logo span {
-	display: block;
-	font-size: 0.55rem;
-	font-weight: var(--fw-medium);
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
-	color: var(--accent);
-}
+body:not(.home) .site-header__logo-img { mix-blend-mode: normal; }
 .site-header__nav { display: flex; gap: var(--sp-32); }
 .site-header__nav a {
 	color: var(--fg-on-dark);
@@ -97,3 +90,35 @@ body:not(.home) .site-header__logo,
 body:not(.home) .site-header__nav a { color: var(--fg); }
 
 #projects, #story, #team, #contact { scroll-margin-top: var(--sp-32); }
+
+.site-footer { background: var(--bg-dark); color: var(--fg-muted-on-dark); }
+.site-footer__inner {
+	max-width: var(--layout-max);
+	margin: 0 auto;
+	padding: var(--sp-64) var(--sp-24) var(--sp-40);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--sp-32);
+}
+.site-footer__logo-img { height: 48px; width: auto; mix-blend-mode: multiply; margin-bottom: var(--sp-16); }
+.site-footer__address { font-size: var(--type-small-size); line-height: 1.6; }
+.site-footer__address a { color: var(--fg-muted-on-dark); }
+.site-footer__nav { display: flex; flex-wrap: wrap; gap: var(--sp-24); }
+.site-footer__nav a {
+	color: var(--fg-on-dark);
+	text-decoration: none;
+	font-size: 0.8rem;
+	font-weight: var(--fw-semibold);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.site-footer__nav a:hover { color: var(--accent); }
+.site-footer__bottom {
+	max-width: var(--layout-max);
+	margin: 0 auto;
+	padding: var(--sp-20) var(--sp-24);
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	font-size: var(--type-micro-size);
+}

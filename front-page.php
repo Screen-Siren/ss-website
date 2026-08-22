@@ -24,7 +24,18 @@ $categories = get_terms( array(
 
 <main id="content" class="ss-home">
 
-	<section class="ss-home__hero" style="background-image: linear-gradient(180deg, rgba(40,40,40,0.55), rgba(40,40,40,0.75)), url('<?php echo esc_url( wp_get_attachment_image_url( 5659790, 'full' ) ); ?>');">
+	<section class="ss-home__hero-video">
+		<div class="ss-home__hero-video-embed">
+			<iframe
+				src="https://player.vimeo.com/video/438674171?background=1&autoplay=1&loop=1&muted=1"
+				frameborder="0"
+				allow="autoplay; fullscreen"
+				title="Screen Siren sizzle reel"
+			></iframe>
+		</div>
+	</section>
+
+	<section class="ss-home__intro">
 		<?php echo wp_get_attachment_image( 5659654, 'medium', false, array( 'class' => 'ss-home__logo', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
 		<h1 class="ss-home__headline">Changing the conversation through award-winning film, television and digital content.</h1>
 	</section>
