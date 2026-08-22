@@ -17,6 +17,7 @@ is missing.
 	--ss-white: #FFFFFF;            /* REAL — page background, 103 occurrences */
 	--ss-neutral: #DADADA;          /* REAL — alternating section background, 38 occurrences */
 	--ss-dark: #282828;             /* REAL — footer background / dark sections, 68 occurrences */
+	--ss-charcoal: #373C40;         /* REAL — sizzle-reel/trailer play-button icon + border, captured Aug 22, 2026 */
 
 	/* ---- Primitives: Primary (the brand accent) ---- */
 	--ss-olive: #B2BB1E;            /* REAL — category badges (FEATURE FILM, etc.) */

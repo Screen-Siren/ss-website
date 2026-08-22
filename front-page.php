@@ -26,10 +26,7 @@ $categories = get_terms( array(
 
 	<section class="ss-home__hero">
 		<?php echo wp_get_attachment_image( 5659654, 'medium', false, array( 'class' => 'ss-home__logo', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
-		<h1 class="type-h1">Changing the conversation through award-winning film, television and digital content.</h1>
-		<a class="ss-home__sizzle" href="https://vimeo.com/438674171" target="_blank" rel="noopener">
-			<span class="ss-home__play-icon" aria-hidden="true">&#9658;</span> Watch the Sizzle Reel
-		</a>
+		<h1 class="ss-home__headline">Changing the conversation through award-winning film, television and digital content.</h1>
 	</section>
 
 	<section class="ss-home__pillars">
@@ -47,12 +44,38 @@ $categories = get_terms( array(
 		</div>
 	</section>
 
+	<section class="ss-home__sizzle-section">
+		<button type="button" class="ss-play-button" data-video-modal="video-sizzle">
+			<span class="ss-play-button__circle" aria-hidden="true">
+				<svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0L16 9L0 18V0Z"/></svg>
+			</span>
+			<span class="ss-play-button__label">Watch the Sizzle Reel</span>
+		</button>
+	</section>
+
+	<div class="ss-home__modal" id="video-sizzle" hidden>
+		<div class="ss-home__modal-inner ss-home__modal-inner--video">
+			<button type="button" class="ss-home__modal-close" aria-label="Close">&times;</button>
+			<div class="ss-home__video-frame" data-embed-src="https://player.vimeo.com/video/438674171"></div>
+		</div>
+	</div>
+
 	<section class="ss-home__banner">
 		<h3>Mafia: Most Wanted can be streamed on Crave</h3>
-		<a class="ss-home__sizzle ss-home__sizzle--dark" href="https://www.youtube.com/watch?v=tgIe5Ob5dfI" target="_blank" rel="noopener">
-			<span class="ss-home__play-icon" aria-hidden="true">&#9658;</span> Watch the Trailer
-		</a>
+		<button type="button" class="ss-play-button ss-play-button--dark" data-video-modal="video-mafia">
+			<span class="ss-play-button__circle" aria-hidden="true">
+				<svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0L16 9L0 18V0Z"/></svg>
+			</span>
+			<span class="ss-play-button__label">Watch the Trailer</span>
+		</button>
 	</section>
+
+	<div class="ss-home__modal" id="video-mafia" hidden>
+		<div class="ss-home__modal-inner ss-home__modal-inner--video">
+			<button type="button" class="ss-home__modal-close" aria-label="Close">&times;</button>
+			<div class="ss-home__video-frame" data-embed-src="https://www.youtube.com/embed/tgIe5Ob5dfI"></div>
+		</div>
+	</div>
 
 	<section class="ss-home__projects" id="projects">
 		<p class="eyebrow">Our Projects</p>

@@ -18,6 +18,10 @@
 
 		function closeModal( modal ) {
 			modal.setAttribute( 'hidden', '' );
+			var frame = modal.querySelector( '.ss-home__video-frame' );
+			if ( frame ) {
+				frame.innerHTML = '';
+			}
 		}
 
 		cards.forEach( function ( card ) {
@@ -26,6 +30,23 @@
 				if ( modal ) {
 					modal.removeAttribute( 'hidden' );
 				}
+			} );
+		} );
+
+		document.querySelectorAll( '[data-video-modal]' ).forEach( function ( btn ) {
+			btn.addEventListener( 'click', function () {
+				var modal = document.getElementById( btn.getAttribute( 'data-video-modal' ) );
+				if ( ! modal ) {
+					return;
+				}
+				var frame = modal.querySelector( '.ss-home__video-frame' );
+				var src = frame.getAttribute( 'data-embed-src' );
+				var iframe = document.createElement( 'iframe' );
+				iframe.src = src + ( src.indexOf( '?' ) === -1 ? '?' : '&' ) + 'autoplay=1';
+				iframe.setAttribute( 'allow', 'autoplay; fullscreen; picture-in-picture' );
+				iframe.setAttribute( 'allowfullscreen', '' );
+				frame.appendChild( iframe );
+				modal.removeAttribute( 'hidden' );
 			} );
 		} );
 
