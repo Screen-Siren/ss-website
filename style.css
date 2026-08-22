@@ -57,8 +57,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 	padding: var(--sp-24) var(--sp-40);
 	color: var(--fg-on-dark);
 }
-.site-header__logo { display: block; line-height: 0; }
-.site-header__logo-img { height: 44px; width: auto; }
+.site-header__logo { display: block; line-height: 0; position: relative; z-index: 2; }
+.site-header__logo-img { height: 64px; width: auto; }
 .site-header__nav { display: flex; gap: var(--sp-32); }
 .site-header__nav a {
 	color: var(--fg-on-dark);

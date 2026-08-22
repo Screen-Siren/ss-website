@@ -9,12 +9,24 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 100vw;
-	height: 56.25vw;      /* 16:9 */
-	min-height: 100vh;
-	min-width: 177.78vh;  /* 16:9 of 100vh */
+	/* Sized to 112% of true "cover" so an occasional letterboxed frame in the reel (older,
+	   non-16:9 archival clips) gets cropped out of view rather than showing black bars. */
+	width: 112vw;
+	height: 63vw;          /* 16:9 at 112% */
+	min-height: 112vh;
+	min-width: 199.11vh;   /* 16:9 of 112vh */
 	transform: translate(-50%, -50%);
 	pointer-events: none; /* background video, not an interactive player */
+}
+/* A permanent, subtle vignette — keeps the nav legible over any frame of the video and
+   reads as a deliberate cinematic treatment rather than a raw, un-color-graded embed. */
+.ss-home__hero-video::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.35) 100%);
+	pointer-events: none;
+	z-index: 1;
 }
 
 .ss-home__intro {
@@ -23,7 +35,7 @@
 	padding: var(--sp-96) var(--sp-24) 0;
 	text-align: center;
 }
-.ss-home__logo { max-width: 235px; height: auto; margin: 0 auto var(--sp-24); display: block; }
+.ss-home__logo { max-width: 340px; height: auto; margin: 0 auto var(--sp-32); display: block; }
 .ss-home__headline {
 	max-width: var(--prose-max);
 	margin: 0 auto;
