@@ -24,7 +24,7 @@ $categories = get_terms( array(
 
 <main id="content" class="ss-home">
 
-	<section class="ss-home__hero">
+	<section class="ss-home__hero" style="background-image: linear-gradient(180deg, rgba(40,40,40,0.55), rgba(40,40,40,0.75)), url('<?php echo esc_url( wp_get_attachment_image_url( 5659790, 'full' ) ); ?>');">
 		<?php echo wp_get_attachment_image( 5659654, 'medium', false, array( 'class' => 'ss-home__logo', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
 		<h1 class="ss-home__headline">Changing the conversation through award-winning film, television and digital content.</h1>
 	</section>
@@ -158,7 +158,7 @@ $categories = get_terms( array(
 		</div>
 	</section>
 
-	<section class="ss-home__story">
+	<section class="ss-home__story" id="story">
 		<p class="eyebrow">Our Story</p>
 		<div class="ss-home__story-grid">
 			<div class="ss-home__accordion">
@@ -179,7 +179,7 @@ $categories = get_terms( array(
 		</div>
 	</section>
 
-	<section class="ss-home__team">
+	<section class="ss-home__team" id="team">
 		<p class="eyebrow">Our Team</p>
 		<div class="ss-home__team-grid">
 			<?php
@@ -206,7 +206,7 @@ $categories = get_terms( array(
 		</div>
 	</section>
 
-	<section class="ss-home__contact">
+	<section class="ss-home__contact" id="contact">
 		<p class="eyebrow">Get in Touch</p>
 		<p>Screen Siren Pictures does not accept unsolicited screenplays, pitch documents or other creative materials. Any unsolicited materials will be disposed of, unopened. We will only accept submissions from recognized literary and talent agents or lawyers.</p>
 		<p>Screen Siren Pictures will seek out job applicants when we have corporate or crew positions available. Follow us on social media for updates and job postings.</p>

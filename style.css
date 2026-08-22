@@ -44,3 +44,56 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 .type-leadb { font-size: var(--type-leadb-size); font-weight: var(--fw-semibold); }
 .type-small { font-size: var(--type-small-size); }
 .type-micro { font-size: var(--type-micro-size); }
+
+.site-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--sp-24) var(--sp-40);
+	color: var(--fg-on-dark);
+}
+.site-header__logo {
+	display: block;
+	font-family: var(--font-heading);
+	font-size: 1.1rem;
+	font-weight: var(--fw-semibold);
+	color: var(--fg-on-dark);
+	text-decoration: none;
+	line-height: 1.2;
+}
+.site-header__logo span {
+	display: block;
+	font-size: 0.55rem;
+	font-weight: var(--fw-medium);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.site-header__nav { display: flex; gap: var(--sp-32); }
+.site-header__nav a {
+	color: var(--fg-on-dark);
+	text-decoration: none;
+	font-size: 0.8rem;
+	font-weight: var(--fw-semibold);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.site-header__nav a:hover { color: var(--accent); }
+
+/* Pages without a photo hero underneath (Design Guidelines, Icon Library) need a
+   solid/dark-text header instead of the transparent white-text version above. */
+body:not(.home) .site-header {
+	position: static;
+	color: var(--fg);
+	background: var(--bg);
+	border-bottom: 1px solid var(--border);
+}
+body:not(.home) .site-header__logo,
+body:not(.home) .site-header__nav a { color: var(--fg); }
+
+#projects, #story, #team, #contact { scroll-margin-top: var(--sp-32); }
