@@ -24,16 +24,7 @@ $categories = get_terms( array(
 
 <main id="content" class="ss-home">
 
-	<section class="ss-home__hero-video">
-		<div class="ss-home__hero-video-embed">
-			<iframe
-				src="https://player.vimeo.com/video/438674171?background=1&autoplay=1&loop=1&muted=1"
-				frameborder="0"
-				allow="autoplay; fullscreen"
-				title="Screen Siren sizzle reel"
-			></iframe>
-		</div>
-	</section>
+	<section class="ss-home__hero-photo" style="background-image: url('<?php echo esc_url( wp_get_attachment_image_url( 5659763, 'full' ) ); ?>');"></section>
 
 	<section class="ss-home__intro">
 		<?php echo wp_get_attachment_image( 5659901, 'medium', false, array( 'class' => 'ss-home__logo', 'alt' => 'Screen Siren Pictures Inc.' ) ); ?>
