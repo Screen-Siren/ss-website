@@ -54,11 +54,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: var(--sp-24) var(--sp-40);
+	padding: var(--sp-12) var(--sp-40);
 	color: var(--fg-on-dark);
 }
 .site-header__logo { display: block; line-height: 0; position: relative; z-index: 2; }
-.site-header__logo-img { height: 64px; width: auto; }
+.site-header__logo-img { height: 140px; width: auto; }
 .site-header__nav { display: flex; gap: var(--sp-32); }
 .site-header__nav a {
 	color: var(--fg-on-dark);

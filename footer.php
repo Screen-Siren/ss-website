@@ -14,6 +14,7 @@
 				<a href="#story">Story</a>
 				<a href="#team">Team</a>
 				<a href="#contact">Contact</a>
+				<a href="<?php echo esc_url( home_url( '/design-guidelines' ) ); ?>">Design Guidelines</a>
 			</nav>
 		</div>
 
